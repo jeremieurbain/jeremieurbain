@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jérémie Urbain - Filmmaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: white;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4rem;
+            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid #e8e8e8;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        nav a:hover { color: #1a1a1a; }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        section {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 3rem;
+        }
+        
+        .section-description {
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+        
+        .bio-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .work-item a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .work-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .work-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .work-item:hover .work-thumbnail {
+            transform: scale(0.98);
+            transition: transform 0.3s;
+        }
+        
+        .work-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .work-meta {
+            color: #666;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e8e8e8, transparent);
+            margin: 8rem 0;
+        }
+        
+        footer {
+            padding: 4rem;
+            text-align: center;
+            border-top: 1px solid #e8e8e8;
+            margin-top: 8rem;
+        }
+        
+        footer p {
+            color: #666;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#commercial">Commercial</a></li>
+                <li><a href="#personal">Personal</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>JÉRÉMIE URBAIN</h1>
+            <p>Filmmaker</p>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">About</h2>
+        <div class="bio-content">
+            <p>Jérémie Urbain is a filmmaker from Paris and New York City, currently based in Montréal. Urbain's works blend experimental filmmaking with a narrative lens. Letting the imagery allure the audience is key throughout his pieces. Urbain's practice, often opting for beauty over narrative, relies heavily on editing, whether it be layering, colour grading or continuity. Urbain holds a bachelor's degree in Film Production from the Mel Hoppenheim School of Cinema.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="commercial">
+        <h2 class="section-title">Commercial Work</h2>
+        <p class="section-description">Sample of Professional projects crafted for brands and clients, blending creative vision with strategic communication.</p>
+        
+        <div class="work-grid">
+            <div class="work-item">
+                <a href="https://www.youtube.com/watch?v=cB0-g6u-kO4" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="R&L.png" alt="Raymond Leigh">
+                    </div>
+                    <h3 class="work-title">Raymond Leigh</h3>
+                    <p class="work-meta">Commercial / 2026</p>
+                    <p class="work-meta">Director, Cinematographer and Editor</p>
+                </a>
+            </div>
+
+            <div class="work-item">
+                <a href="https://www.youtube.com/watch?v=rN5POyiLMTM" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Mutek.png" alt="MUTEK">
+                    </div>
+                    <h3 class="work-title">MUTEK</h3>
+                    <p class="work-meta">Promotional / 2024</p>
+                    <p class="work-meta">Editor</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="personal">
+        <h2 class="section-title">Personal Work</h2>
+        <p class="section-description">A curated collection of passion projects and experimental narratives that explore the boundaries of visual storytelling.</p>
+        
+        <div class="work-grid">
+            <div class="work-item">
+                <a href="https://www.youtube.com/watch?v=yADKHrKHooY" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Subwater.png" alt="Subwater">
+                    </div>
+                    <h3 class="work-title">Subwater</h3>
+                    <p class="work-meta">Experimental / 2025</p>
+                </a>
+            </div>
+
+            <div class="work-item">
+                <a href="https://drive.google.com/file/d/10lWgrB-9z4-ghBPA6jW1waHCqMbATgaN/view" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Orangeblue.png" alt="Orange Blue">
+                    </div>
+                    <h3 class="work-title">Orange Blue</h3>
+                    <p class="work-meta">Narrative / 2025</p>
+                </a>
+            </div>
+
+            <div class="work-item">
+                <a href="https://drive.google.com/file/d/1u7aYfjFpHOh2EkJ-uIiyYFR1hUtYHLL1/view" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Car.png" alt="Car">
+                    </div>
+                    <h3 class="work-title">Car</h3>
+                    <p class="work-meta">Experimental / 2024</p>
+                </a>
+            </div>
+
+            <div class="work-item">
+                <a href="https://drive.google.com/file/d/1K64izqFm7cFnauvb5jW00K1U-Zcg10_F/view" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Daddy Dj.png" alt="Daddy DJ">
+                    </div>
+                    <h3 class="work-title">Daddy DJ</h3>
+                    <p class="work-meta">Narrative / 2023</p>
+                </a>
+            </div>
+
+            <div class="work-item">
+                <a href="https://drive.google.com/file/d/1TB9Nua174EcPEA1epsb_m5QctN6819RO/view" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Naturesick.png" alt="Naturesick">
+                    </div>
+                    <h3 class="work-title">Naturesick</h3>
+                    <p class="work-meta">Narrative / 2022</p>
+                </a>
+            </div>
+
+            <div class="work-item">
+                <a href="https://www.youtube.com/watch?v=ZgSTlbvXBfw" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Train.png" alt="Train">
+                    </div>
+                    <h3 class="work-title">Train</h3>
+                    <p class="work-meta">Experimental / 2022</p>
+                </a>
+            </div>
+
+            <div class="work-item">
+                <a href="https://www.youtube.com/watch?v=j-Y2c_L6Zv4" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="Light.png" alt="Light">
+                    </div>
+                    <h3 class="work-title">Light</h3>
+                    <p class="work-meta">Narrative / 2021</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Get in Touch — jeremieurbain@outlook.com</p>
+    </footer>
+</body>
+</html>
