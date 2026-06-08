@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jérémie Urbain - Filmmaker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Work Sans', sans-serif;
-            background: white;
-            color: #1a1a1a;
-            line-height: 1.6;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
         
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation: Absolute position so it disappears when scrolling down */
         header {
-            position: fixed;
+            position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
-            padding: 2rem 4rem;
-            background: rgba(255,255,255,0.95);
-            border-bottom: 1px solid #e8e8e8;
+            padding: 2.5rem 4rem;
             z-index: 1000;
         }
         
@@ -34,19 +39,23 @@
         
         nav ul {
             display: flex;
-            gap: 3rem;
+            gap: 3.5rem;
             list-style: none;
         }
         
         nav a {
-            color: #666;
+            color: #888888;
             text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            transition: color 0.3s ease;
         }
         
-        nav a:hover { color: #1a1a1a; }
+        nav a:hover { 
+            color: #ffffff; 
+        }
         
         .hero {
             height: 100vh;
@@ -54,56 +63,65 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 0 2rem;
+            border-bottom: 1px solid #222222;
         }
         
         .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 6rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1rem;
-            color: #666;
-            letter-spacing: 2px;
+            font-size: 5rem;
+            font-weight: 200;
+            letter-spacing: 12px;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
             text-transform: uppercase;
         }
         
+        .hero p {
+            font-size: 0.9rem;
+            color: #888888;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        
         section {
-            padding: 8rem 4rem;
+            padding: 10rem 4rem;
             max-width: 1400px;
             margin: 0 auto;
         }
         
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
+            font-size: 2.5rem;
             font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 3rem;
+            letter-spacing: 4px;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid #222222;
+            padding-bottom: 1rem;
         }
         
         .section-description {
-            color: #666;
+            color: #888888;
             max-width: 600px;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            font-size: 0.95rem;
+            font-weight: 300;
         }
         
         .bio-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 2;
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 2.2;
+            letter-spacing: 0.5px;
+            color: #e5e5e5;
         }
         
         .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 4rem;
         }
         
         .work-item a {
@@ -115,71 +133,107 @@
         .work-thumbnail {
             width: 100%;
             aspect-ratio: 16/9;
-            background: #fafafa;
-            border: 1px solid #e8e8e8;
+            background: #111111;
+            border: 1px solid #222222;
             overflow: hidden;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.4s ease;
         }
         
         .work-thumbnail img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0.85;
+            transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
         
+        .work-item:hover .work-thumbnail img {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
         .work-item:hover .work-thumbnail {
-            transform: scale(0.98);
-            transition: transform 0.3s;
+            border-color: #444444;
         }
         
         .work-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
         }
         
         .work-meta {
-            color: #666;
-            font-size: 0.85rem;
+            color: #888888;
+            font-size: 0.8rem;
             letter-spacing: 1px;
+            font-weight: 300;
+            margin-top: 0.2rem;
         }
         
         .divider {
             height: 1px;
-            background: linear-gradient(to right, transparent, #e8e8e8, transparent);
-            margin: 8rem 0;
+            background: #222222;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         footer {
-            padding: 4rem;
+            padding: 8rem 4rem;
             text-align: center;
-            border-top: 1px solid #e8e8e8;
-            margin-top: 8rem;
+            border-top: 1px solid #222222;
         }
         
         footer p {
-            color: #666;
-            font-size: 0.85rem;
+            color: #ffffff;
+            font-size: 1rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            font-weight: 300;
         }
 
-        .social-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #1a1a1a;
+        footer p a {
+            font-weight: 500;
+            border-bottom: 1px solid #ffffff;
             padding-bottom: 2px;
             transition: opacity 0.3s;
         }
 
-        .social-link:hover {
+        footer p a:hover {
             opacity: 0.6;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #888888;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s, border-color 0.3s;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        .social-link:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header { padding: 2rem; }
+            nav ul { gap: 1.5rem; }
+            .hero h1 { font-size: 3rem; letter-spacing: 6px; }
+            section { padding: 6rem 2rem; }
+            .work-grid { grid-template-columns: 1fr; gap: 3rem; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <nav>
             <ul>
@@ -212,6 +266,17 @@
         <p class="section-description">Sample of Professional projects crafted for brands and clients, blending creative vision with strategic communication.</p>
         
         <div class="work-grid">
+            <div class="work-item">
+                <a href="https://www.youtube.com/watch?v=CVU7xWEpCJw" target="_blank">
+                    <div class="work-thumbnail">
+                        <img src="pfoac.png" alt="Pierre-François Ouellette Art Contemporain">
+                    </div>
+                    <h3 class="work-title">Pierre-François Ouellette Art Contemporain</h3>
+                    <p class="work-meta">Interview / 2026</p>
+                    <p class="work-meta">Director, Cinematographer and Editor</p>
+                </a>
+            </div>
+
             <div class="work-item">
                 <a href="https://www.youtube.com/watch?v=cB0-g6u-kO4" target="_blank">
                     <div class="work-thumbnail">
@@ -316,8 +381,8 @@
     </section>
 
     <footer id="contact">
-        <p>Get in Touch — <a href="mailto:jeremieurbain@outlook.com" style="color: inherit; text-decoration: none;">jeremieurbain@outlook.com</a></p>
-        <div style="margin-top: 1.5rem;">
+        <p>Get in Touch — <a href="mailto:jeremieurbain@outlook.com">jeremieurbain@outlook.com</a></p>
+        <div>
             <a href="https://www.instagram.com/urbainization/" 
                target="_blank" 
                rel="noopener noreferrer" 
@@ -326,3 +391,6 @@
             </a>
         </div>
     </footer>
+
+</body>
+</html>
